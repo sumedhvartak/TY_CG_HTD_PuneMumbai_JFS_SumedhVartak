@@ -1,0 +1,45 @@
+<div class="container mt-4">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Index</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Degree</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let x of students; index as i"
+            [ngClass]="{ 'bg-success': x.name.length > 6 ,
+                          'bg-danger': x.name.length <=6}"
+
+            [ngStyle] = "{'color': x.name.length > 6 ? 'white' : 'blue'}" >
+                <td>{{i+1}}</td>
+                <td>{{x.id}}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.age}}</td>
+                <td>{{x.degree}}</td>
+                <td>
+                    <button class ="btn btn-primary" (click)='deleteStudent(x)' >Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            
+
+<!-- [class.bg-success]='x.name.indexOf("S") === 0' -->
+
+<!-- <div *ngIf='flag'>The If Block</div> -->
+
+<div *ngIf='flag; then trueBlock else false block'></div>
+<ng-template #trueBlock>This is True Block</ng-template>
+<ng-template #falseBlock>This is false Block</ng-template>
+
+<div [ngSwitch] = 'person'>
+    <div *ngSwitchCase='"Diptesh"'>The person is Diptesh</div>
+    <div *ngSwitchCase='"Dipa"'>The person is Dipa</div>
+    <div *ngSwitchDefault>The person is default</div>
+</div>

@@ -1,0 +1,51 @@
+<div class="col-md-4 offset-md-4 card card-body mt-5">
+    <form #loginForm='ngForm' (ngSubmit)='printForm(loginForm,email)'>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" #email='ngModel' ngModel name="email" class="form-control"
+            required minlength="8" email >
+            <div *ngIf="email.touched && email.invalid">
+                <p class="alert alert-danger" *ngIf="email.errors.required">
+                    This field is mandatory
+                </p>
+                <p class="alert alert-danger" *ngIf='email.errors.minlength'>
+                    Minimun 8 characters required
+                </p>
+                <p class="alert alert-danger" *ngIf='email.errors.email'>
+                    This field accepts only email
+                </p>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" 
+             #password='ngModel' ngModel class="form-control">
+        </div>
+
+
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-primary" [disabled]='loginForm.invalid'>Login</button>
+        </div>
+    </form>
+</div>
+
+<div class="container mt-5" *ngIf="users.length !== 0">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor ="let user of users">
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

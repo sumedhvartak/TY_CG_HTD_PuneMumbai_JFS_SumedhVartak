@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <table class="table table-bordered table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let user of users;index as i'>
+                <td>{{i+1}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.emai}}</td>
+                <td>{{user.phone}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

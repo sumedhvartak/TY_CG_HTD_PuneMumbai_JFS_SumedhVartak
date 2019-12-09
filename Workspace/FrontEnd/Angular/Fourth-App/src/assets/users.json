@@ -1,0 +1,32 @@
+[
+    {
+        "id": 123,
+        "name":"Samurai",
+        "emai": "samurai@gmail.com",
+        "phone":98784756323
+    },
+    {
+        "id": 124,
+        "name":"sanjo",
+        "emai": "sanjo@gmail.com",
+        "phone":9878653647
+    },
+    {
+        "id":125,
+        "name":"samu",
+        "emai": "samu@gmail.com",
+        "phone":5949375633
+    },
+    {
+        "id":126,
+        "name":"bharta",
+        "emai": "bharta@gmail.com",
+        "phone":1234567891
+    },
+    {
+        "id":1238 ,
+        "name":"suniyo",
+        "emai": "suniyo@gmail.com",
+        "phone":12345678
+    }
+]

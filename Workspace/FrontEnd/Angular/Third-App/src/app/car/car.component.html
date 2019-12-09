@@ -1,0 +1,8 @@
+<div class="col-md-3 float-left" style="height: 800px; overflow-y: scroll;">
+    <div class="card card-body" *ngFor='let car of cars'>
+        <img [src]="car.imgURL" class="card-img-top" (click)='selectCar(car)' alt="">
+        <h5 class="text-center">{{car.brand}}</h5>
+    </div>
+</div>
+
+<app-car-detail [car]='selectedCar'></app-car-detail>

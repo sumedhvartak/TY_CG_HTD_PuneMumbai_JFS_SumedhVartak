@@ -1,0 +1,10 @@
+<div class="container mt-5">
+    <div class="card-deck">
+        <div class=" card card-body col-md-4 ml-0 mr-0 float-left " *ngFor='let product of products'>
+            <img [src]="product.imageURL" class="card-img-top" alt="">
+            <h3 class="text-center">{{product.name}}</h3>
+            <p>{{product.price}}</p>
+            <p>{{product.detail}}</p>
+        </div>
+    </div>
+</div>

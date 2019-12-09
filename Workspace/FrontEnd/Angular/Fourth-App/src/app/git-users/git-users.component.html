@@ -1,0 +1,24 @@
+<div class="container mt-4">
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Node_id</th>
+                <th>Avatar_url</th>
+                <th>Followers_url</th>
+                <th>subscriptions_url</th>
+                <th>Index</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of gitUsers;index as i'>
+                <td>{{user.node_id}}</td>
+                <td>
+                    <img [src]="user.avatar_url" width="50%" alt="">
+                </td>
+                <td>{{user.followers_url}}</td>
+                <td>{{user.subscriptions_url}}</td>
+                <td>{{i+1}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

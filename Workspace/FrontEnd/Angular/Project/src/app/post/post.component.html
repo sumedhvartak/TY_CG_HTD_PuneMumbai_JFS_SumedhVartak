@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>User_id</th>
+                <th>id</th>
+                <th>title</th>
+                <th>body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of gitUsers;index as i'>
+                <td>{{user.userId}}</td>
+                <td>
+                    {{user.id}}
+                </td>
+                <td>{{user.title}}</td>
+                <td>{{user.body}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,26 @@
+<div class="container mt-5">
+<table class="table table-bordered table-hover">
+<thead class="table-dark">
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Std</th>
+        <th>Roll No.</th>
+        <th>Sexxxx</th>
+        <th>Button</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor='let student of students; index as i'>
+        <td>{{i+1}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.std}}</td>
+        <td>{{student.rollno}}</td>
+        <td>{{student.sex}}</td>
+        <td>
+            <button class="btn btn-outline-dark" (click)=DeleteStudent(student)>Sexx</button>
+        </td>
+    </tr>
+</tbody>
+</table>
+</div>
