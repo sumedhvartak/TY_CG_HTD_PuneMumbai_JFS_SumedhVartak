@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="mobile" class="com.capgemini.springcode.beans.Mobile" autowire="byName">
+    <property name="brandName" value="nokia"></property>
+    <property name="modelName" value="1023"></property>
+    <property name="price" value="12345"></property>
+  <!--   <property name="mobileDisplay" ref="mobiledisplay"></property> -->
+    </bean>
+    
+    <bean id="mobileDisplay" class="com.capgemini.springcode.beans.MobileDisplayBean">
+    <property name="displaySize" value="10"></property>
+    <property name="resolution" value="1024"></property>
+    </bean>
+    
+    </beans>

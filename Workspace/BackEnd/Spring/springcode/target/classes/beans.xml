@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- bean definitions here -->
+	<!-- <bean id="messageBean" class="com.capgemini.springcode.beans.MessageBean">
+	<property name="message" value="Welcome to spring"></property>
+	</bean> -->
+	
+	<bean class="com.capgemini.sprincode.postprocessors.MyBeanPostProcessor"/>
+	<bean class="com.capgemini.sprincode.postprocessors.MyBeanFactoryPostProcessor"/>
+	<bean id="messageBean2" class="com.capgemini.springcode.beans.MessageBean2"
+	 init-method="init"
+	destroy-method="destroy" 
+	>
+		<property name="message" value="Happy Children Day"></property>
+	</bean>
+	
+	<!-- <bean id="employee" class="com.capgemini.springcode.beans.EmployeeBean">
+	<property name="empid" value="101"></property>
+	<property name="empName" value="Sumedh"/>
+	</bean>
+	
+	<bean id="employee1" class="com.capgemini.springcode.beans.EmployeeBean">
+	<property name="empid" value="102"></property>
+	<property name="empName" value="Samurai"/>
+	</bean> -->
+</beans>
