@@ -1,0 +1,39 @@
+form{
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 350px;
+    height:250px; 
+    margin-left: 400px;  
+    margin-right: 400px;
+    margin-top: 200px;
+    margin-bottom: 112px;
+    text-align:center;
+    background-image:url("/images/giphy.gif");
+    font-size: 20px;
+    color:blue;
+    box-shadow: 10px 10px 0 green;
+    font-family:cursive;
+}
+input[type="text"],input[type="password"]{
+    width: 200px;
+    height:23px;
+    border: 1px solid red;
+    border-radius: 50px;
+    margin:10px;
+    outline: none;
+    text-align: center;
+}
+input[type="submit"]
+{
+border-color: 1px solid black;
+border-radius: 50px;
+
+}
+input[type="submit"]:hover{
+    background-color: salmon;
+    cursor: pointer;
+}
+body{
+    background-image: url("/images/desert-4517723__340.jpg");
+    background-size: cover;
+}
