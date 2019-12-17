@@ -1,0 +1,103 @@
+<div class="container mt-5">
+
+    <div class="alert alert-danger" *ngIf="error">
+        {{error}}
+    </div>
+    <div class="alert alert-success" *ngIf="message">
+        {{message}}
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Delete</th>
+                <th>Update</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let medicine of medicines'>
+                <td>{{medicine.productId}}</td>
+                <td>{{medicine.productName}}</td>
+                <td>{{medicine.productPrice}}</td>
+                <td>{{medicine.quantity}}</td>
+                <td>{{medicine.status}}</td>
+                <td>
+                    <button type="submit" class="btn btn-primary" (click)='deleteMedicine(medicine)'>
+                        Delete
+                    </button>
+                </td>
+                <td>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        (click)=selectMedicine(medicine)>
+                        Update
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-4 offset-md-4 mt-5 mb-3">
+                                        <form #updateProduct='ngForm' (ngSubmit)="updateForm(updateProduct)">
+                                            <div class="form-group">
+                                                <label for="productId">Product Id</label>
+                                                <input type="number" name="productId" #productId='ngModel' ngModel
+                                                    productId required class="form-control"
+                                                    placeholder="Enter ProductId">
+                                                <div *ngIf='productId.touched && productId.invalid'>
+                                                    <p class="alert alert-primary" *ngIf='productId.errors.required'>
+                                                        This field is required</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="quantity">Quantity</label>
+                                                <input type="number" name="quantity" #quantity='ngModel' ngModel
+                                                    quantity required class="form-control"
+                                                    placeholder="Enter the Quantity">
+                                                <div *ngIf='quantity.touched && quantity.invalid'>
+                                                    <p class="alert alert-primary" *ngIf='quantity.errors.required'>This
+                                                        field is required</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="productPrice">Product Price</label>
+                                                <input type="number" name="productPrice" #productPrice='ngModel' ngModel
+                                                    productPrice required class="form-control"
+                                                    placeholder="Enter Product Price">
+                                                <div *ngIf='productPrice.touched && productPrice.invalid'>
+                                                    <p class="alert alert-primary" *ngIf='productPrice.errors.required'>
+                                                        This field is required</p>
+                                                </div>
+                                            </div>
+                                            <div class="btn-group col-md-12">
+                                                <button type="reset" class="btn btn-outline-dark">Reset</button>
+                                                <button type="submit" class="btn btn-outline-primary"
+                                                    [disabled]='updateProduct.invalid'>
+                                                    Update
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

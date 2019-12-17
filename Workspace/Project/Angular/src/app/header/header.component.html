@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/">Online Medical Store</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/">Home</a>
+            </li>
+            <li class="nav-item active" *ngIf="!(isAdminLogin() || isUserLogin())">
+                <a class="nav-link" routerLink="/productdisplay">Product</a>
+            </li>
+            <li class="nav-item active" *ngIf="isAdminLogin()">
+                <a class="nav-link" routerLink="/viewAllProduct">Product</a>
+            </li>
+            <li class="nav-item active" *ngIf="isAdminLogin()">
+                <a class="nav-link" routerLink="/addProduct">Add Product</a>
+            </li>
+            <li class="nav-item active" *ngIf="isAdminLogin()">
+                <a class="nav-link" routerLink="/viewAllUser">User</a>
+            </li>
+
+            <li class="nav-item active" *ngIf="isUserLogin()">
+                <a class="nav-link" routerLink="/cartview">Cart</a>
+            </li>
+            <li class="nav-item active" *ngIf="isUserLogin()">
+                <a class="nav-link" routerLink="/viewuserproduct">Product List</a>
+            </li>
+            <li class="nav-item active" *ngIf="isAdminLogin()">
+                <a class="nav-link" routerLink="/addmessageuser">Send Message</a>
+            </li>
+            <li class="nav-item active" *ngIf="isUserLogin()">
+                    <a class="nav-link" routerLink="/usersendmessage">Send Message</a>
+            </li>
+            <li class="nav-item active" *ngIf="(isAdminLogin() || isUserLogin())">
+                <a class="nav-link" routerLink="/viewmessageuser">Discussion </a>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav float-right" *ngIf="isLogin()">
+            <li class="nav-item active">
+                <h4>Welcome {{userName}} </h4>
+            </li>
+            <li class="nav-item active" *ngIf="isUserLogin()">
+                <a class="nav-link" routerLink="/updatepassword">Update Password</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav float-right" *ngIf="!(isAdminLogin() || isUserLogin())">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/register">Register</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav float-right" *ngIf="(isAdminLogin() || isUserLogin())">
+            <li class="nav-item active">
+                <!-- <button (click)="logoutUser()">Logout</button> -->
+                <button type="button" class="btn btn-light" (click)="logoutUser()">Logout</button>
+
+            </li>
+        </ul>
+
+    </div>
+</nav>

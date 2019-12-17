@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Message ID</th>
+                <th>User Id</th>
+                <th>Message</th>
+                <th>User/Admin</th>
+                <th>Response/Query</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor ='let user of users'>
+                <td>{{user.messageId}}</td>
+                <td>{{user.userId}}</td>
+                <td>{{user.message}}</td>
+                <td>{{user.type}}</td>
+                <td>{{user.question}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
